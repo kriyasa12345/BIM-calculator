@@ -81,27 +81,19 @@ button:hover {
     </div>
     <script>
         function calculateBMI() {
-    // Get the values from the input fields
+    
     const height = document.getElementById('height').value;
     const weight = document.getElementById('weight').value;
 
-    // Validate inputs
+   
     if (height === '' || weight === '') {
         alert('Please enter both height and weight.');
         return;
     }
-
-    // Convert height from cm to meters
     const heightInMeters = height / 100;
-
-    // Calculate BMI
     const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
-
-    // Display the result
     const result = document.getElementById('result');
     result.textContent = `Your BMI is ${bmi}`;
-
-    // Add BMI category
     let category = '';
     if (bmi < 18.5) {
         category = 'Underweight';
